@@ -5,7 +5,7 @@ const geocode = require('./ulits/geocode')
 const forecast = require('./ulits/forcast')
 
 const app = express()
-const port =4000
+const port =4000||process.env.PORT
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -36,7 +36,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.render('help page ', {
+    res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'HELP',
         name: 'Abdo Ali Gomaa'

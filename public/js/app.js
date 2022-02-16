@@ -13,7 +13,7 @@ WeatherSearch.addEventListener('submit',(e)=>{
     e.preventDefault()
     const location=search.value
     // console.log(location)
-    fetch(`http://localhost:4000/weather?address=${location}`).then((resonse)=>{
+    fetch(`/weather?address=${location}`).then((resonse)=>{
         resonse.json().then((data)=>{
             if(data.error){
                 messageOne.textContent=data.error
